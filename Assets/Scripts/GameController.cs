@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
 	[SerializeField] SpawnPoint latestSp;
     public readonly UnityEvent GameOver = new UnityEvent();
 
+    private Coroutine goToScene;
 	int spawnIndex = 0;
 
 
@@ -221,5 +222,12 @@ public class GameController : MonoBehaviour
 		}
 	}
 
+    public void GoToScene(string sceneName, float transDuration) {
+        goToScene = StartCoroutine(SceneChanger(sceneName,transDuration));
+    }
 
+    private IEnumerator SceneChanger(string sceneName, float transDuration) {
+        yield return new WaitForSeconds(transDuration);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }
 }

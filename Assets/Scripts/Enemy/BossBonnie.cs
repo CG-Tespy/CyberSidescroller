@@ -305,12 +305,11 @@ public class BossBonnie : EnemyController
 
     public IEnumerator Kill()
     {
-
+        GameController.S.GoToScene("TitleScreen", 3.5f);
         color = Color.black;
         yield return new WaitForSeconds(0.5f);
 
         //drop item
         Destroy(this.gameObject);
-
     }
 }
