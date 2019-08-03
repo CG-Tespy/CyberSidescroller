@@ -138,6 +138,11 @@ public class SidescrollerCharacter : 	CSS_MonoBehaviour2D, IHasHP, IDamageable<f
 
 	SpriteRenderer beingClimbed = null;
 
+	void OnApplicationQuit()
+	{
+		this.hp = 											this.maxHp;
+	}
+	
 	// Use this for initialization
 	protected override void Awake () 
 	{

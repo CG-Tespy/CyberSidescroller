@@ -22,6 +22,8 @@ public class Player : SidescrollerCharacter
 
 	Rigidbody2DSaveState rbState;
 
+	
+
 	// Use this for initialization
 	protected override void Awake () 
 	{
